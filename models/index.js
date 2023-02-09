@@ -7,12 +7,12 @@ Log.belongsTo(User, {
 })
 
 User.hasMany(Ticket, {
-    foreignKey: 'user_id',
+    foreignKey: 'ticket_id',
     onDelete: 'CASCADE'
 });
 
-Ticket.belongsTo(User, {
-    foreignKey: 'user_id',
+Ticket.belongsTo(Log, {
+    foreignKey: 'log_id',
 });
 
 
