@@ -1,0 +1,19 @@
+{
+  "name": "offnon",
+  "version": "1.0.0",
+  "description": "In this application, users will be able to submit tickets (requests for help) with their coding work, technical questions, etc. Tickets will be created to be addressed by technicians. This application models the AskBCS and JIRA ticket systems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxtATX/OffNOn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rxtATX/OffNOn/issues"
+  },
+  "homepage": "https://github.com/rxtATX/OffNOn#readme"
+}
