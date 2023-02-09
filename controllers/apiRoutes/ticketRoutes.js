@@ -17,25 +17,4 @@ router.post('/', async (req, res) => {
     }
 })
 
-/*
-    The developer will create the API route for handling a new ticket being created.
-
-Acceptance Criteria:
-[] It is done when a router post listener exists within ticketRoutes.js
-[] It is done when within the route handler function, a sequelize create method is being called.
-[] It is done when the object passed to create includes the fields (as they match in the ticket model) holding the data related to
-
-The user's input
-Subject
-Description
-Urgency
-- The automatically added fields
-Client user's id
-Status: "Open"
-date created
-[] It is done when on creating the new ticket, the client is informed of the successful creation, including in the response the ticket's id - crucial for client-side redirection
-- The proper response could also be (optional) res.redirect("/ticket/")
-[] It is done when creation fails, the client is informed with an appropriate server error.
-*/
-
 module.exports = router;
