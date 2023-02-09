@@ -8,7 +8,10 @@ const logData = require('./logData.json');
 const seedDatabase = async () => {
   await sequelize.sync ({ force: true });
 
-  await User.bulkCreate(userData);
+  await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
   await Ticket.bulkCreate(ticketData);
   await Log.bulkCreate(logData);
 
