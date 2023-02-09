@@ -1,3 +1,5 @@
+console.log ('Logout.js has loaded.')
+
 const logout = async () => {
     const response = await fetch ('/api/user/logout', {
         method: 'POST', 

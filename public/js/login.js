@@ -1,4 +1,6 @@
 //allows us to prevent the default behavior when entering the email and password so we can create our own desired behavior once the values are entered. 
+console.log ('Login.js has loaded.');
+
 const loginForm= async (event) => {
     event.preventDefault();
 
