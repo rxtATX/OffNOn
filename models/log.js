@@ -29,6 +29,10 @@ Log.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
+        },
+        is_hidden: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     },
     {

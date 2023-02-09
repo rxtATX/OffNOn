@@ -5,7 +5,14 @@ class Ticket extends Model {}
 
 Ticket.init(
     {
-        user_id: {
+        client_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        tech_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
@@ -34,6 +41,10 @@ Ticket.init(
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: 'Open'
+        }, 
+        urgency: {
+            type: DataTypes.STRING,
+            allowNull: false,
         }
     },
     {
