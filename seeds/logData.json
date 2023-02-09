@@ -1,0 +1,20 @@
+[
+  {
+
+    "ticket_id": 1,
+    "log_text": "How do I place the modal ",
+    "date_created": "09/10/2022"
+  },
+  {
+
+    "ticket_id": 2,
+    "log_text": "I'm trying to select a button, and add an event listener",
+    "date_created": "05/09/2022"
+  },
+  {
+
+    "ticket_id": 4,
+    "log_text": "Do I need to 'USE Database' before making a new table? ",
+    "date_created": "01/26/2023"
+  }
+]

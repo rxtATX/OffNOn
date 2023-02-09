@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "password": "password1234",
+    "email": "batman@gotham.com",
+    "first_name": "Bruce",
+    "last_name": "Wayne"
+  },
+  {
+    "id": 2,
+    "password": "password1234",
+    "email": "superman@krypton.com",
+    "first_name": "Clark",
+    "last_name": "Kent"
+  },
+  {
+    "id": 3,
+    "password":"password1234",
+    "email": "wonderwoman@themyscira.com",
+    "first_name": "Diana",
+    "last_name": "Prince",
+    "role": "Tech"
+  }
+]
