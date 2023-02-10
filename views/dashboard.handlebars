@@ -1,10 +1,23 @@
-
-
-    <h1>
-        This is the dashboard handlebar!
-    </h1>
-
-
+{{!-- top half of the page --}}
+<section class="container min-vh-100 py-2">
+    <div class="row">
+        <div class="col">
+            <h2 class="d-flex justify-content-center">Your Tickets</h2>
+            <p id= "subhead" class= "d-flex justify-content-center">
+                You may view ALL tickets, or filter by status. 
+            </p>
+<div id=ticket-btns class= "d-flex justify-content-evenly">
+        <button id=unclaimed type="button" class="btn btn-secondary">Unclaimed</button>
+        <button id=pending type="button" class="btn btn-secondary">Pending</button>
+        <button id=resolved type="button" class="btn btn-secondary">Resolved</button>
+        <button id=claimed type="button" class="btn btn-secondary">Claimed</button>
+        <button id=all type="button" class="btn btn-secondary">ALL</button>
+    </div> 
+    <div class="addBtn d-flex justify-content-center">
+        <button class="btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+</section>
 
 
 
