@@ -1,0 +1,10 @@
+<div class="card bg-light object-fit-contain w-75 mx-auto">
+    <div class="d-flex justify-content-between mx-5 mt-4" >
+        <h1>{{ticket_title}}</h1>
+        <h2 class="bg-primary px-3 rounded-pill text-white">{{status}}</h2>
+    </div>
+    <div class="card-body mx-4 font-weight-normal">
+        <h6>Description - {{ticket_text}}</h6>
+        <h6 class="d-flex justify-content-end"> Opened by {{user.first_name}} {{user.last_name}} on {{date_created}}</h6>
+    </div>
+</div>
