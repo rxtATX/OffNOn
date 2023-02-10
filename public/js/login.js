@@ -1,11 +1,7 @@
 //allows us to prevent the default behavior when entering the email and password so we can create our own desired behavior once the values are entered. 
 console.log ('Login.js has loaded.');
 
-<<<<<<< HEAD
-const loginFormhandler = async (event) => {
-=======
 const loginFormHandler= async (event) => {
->>>>>>> c7a85cdce4228ffd9d5602ce3ee277fb39e87e24
     event.preventDefault();
 
     //eliminates trailing and leading space for the entered email and login values 
