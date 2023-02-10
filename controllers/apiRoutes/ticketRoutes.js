@@ -10,8 +10,7 @@ router.post('/', async (req, res) => {
             urgency: req.body.urgency
         })
 
-        res.status(200).json('Successfully Added Ticket.')
-        res.redirect('/Ticket/newTicket.id')
+        res.status(200).json(newTicket);
     } catch (err) {
         res.status(500).json('Server Error: Could not add Ticket.');
     }
