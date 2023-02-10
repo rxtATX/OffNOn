@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['first_name', 'last_name'],
                 },
             ],
         });
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         const tickets = ticketData.map((ticket) => ticket.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('homepage', {
+        res.render('dashboard', {
             tickets,
             logged_in: req.session.logged_in
         });
@@ -40,7 +40,7 @@ router.get('/dashboard', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['first_name', 'last_name'],
                 },
             ],
         });
