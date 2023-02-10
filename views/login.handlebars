@@ -1,3 +1,21 @@
-      <h1>
-        This is the login handlebar!
-      </h1>
+
+<form class="login-form mx-auto">
+    <div class="mx-auto form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label text-primary">email</label>
+        <div class="mx-auto col-sm-10 col-md-6">
+            <input type="text" id="email-login">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label text-primary">Password</label>
+        <div class="mx-auto col-sm-10 col-md-6">
+            <input type="password" class="form-control" id="password-login">
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+    </div>
+</form>
+<h3 class="mx-auto" style="margin-top: 10px;">Don't have an account? <a class="text-primary" href="/signup">Sign up</a></h1>
+
+<script src="../public/js/login.js"></script>
