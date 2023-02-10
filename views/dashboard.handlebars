@@ -1,6 +1,8 @@
-      <h1>
+
+
+    <h1>
         This is the dashboard handlebar!
-      </h1>
+    </h1>
 
 
 
@@ -36,8 +38,9 @@
         <td>{{ticket.status}}</td>
         <td>{{ticket.description}}</td>
         <td>{{ticket.urgence}}</td>
+        <td>{{ticket.client}}</td>
         <td>{{ticket.date}}</td>
-        <td><a href=/ticket>font awesome <I></I></a></td>
+        <td><a href=/ticket/{{id}}>font awesome <I></I></a></td>
     </tr>
     {{/each}}
     
@@ -70,5 +73,6 @@
 </div>
 
 </section>
+
 
 
