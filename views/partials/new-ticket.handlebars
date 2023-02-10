@@ -1,0 +1,38 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5">Create a New TIcket</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form id="create">
+            <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input class="form-control" id="subject-input">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <input class="form-control" id="description-input">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="urgency-input" aria-label="Text input with dropdown button">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Level</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="#">Low</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Medium</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">High</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+    </div>
+</div>
+
+{{!-- subject-input --}}
+{{!-- description-input --}}
+{{!-- urgency-input --}}
