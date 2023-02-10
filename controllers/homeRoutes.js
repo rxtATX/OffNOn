@@ -85,7 +85,7 @@ router.get('/ticket', async (req, res) => {
     });
 })
 
-router.get('ticket/:id', withAuth, async (req,res) => {
+router.get('/ticket/:id', withAuth, async (req,res) => {
 	try {
 		const ticketID = await Ticket.findByPk(req.params.id, {
             include : [
