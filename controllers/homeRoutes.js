@@ -104,7 +104,7 @@ router.get('/ticket/:id', withAuth, async (req,res) => {
 	}
 	catch (err) {
 		console.log(err)
-		render.status500.json(err);
+		res.status(500).json(err);
 	}
 });
 
