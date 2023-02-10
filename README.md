@@ -1,2 +1,47 @@
 # OffNOn
-In this application, users will be able to submit tickets (requests for help) with their coding work, technical questions, etc. Tickets will be created to be addressed by technicians. This application models the AskBCS and JIRA ticket systems.
+  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+## Description
+This application will allow users to submit ticket requests for help with their coding work, technical questions, and other questions! Tickets will be created to be addressed by technicians. This application models the AskBCS and JIRA ticket systems.
+
+[Deployed Application]()
+
+## Table of contents
+
+- [Installation](#Insallation)
+
+- [Usage](#Usage)
+
+- [Contribution](#Contributing)
+
+- [Technologies](#Technologies)
+
+- [Test](#Test)
+
+- [Questions](#Questions)
+
+## Installation
+There are no instructions, just follow the link the the site and start asking questions!
+
+## Usage
+Once you are on the browser you will be prompted to log in or sign up! After that has been done click the "Create Ticket" button and ask your question, it will then await a response from a technician.
+
+## Contributing
+[Anthony Frederick](https://github.com/AnthonyFrederick7)
+[Christopher Simmonds](https://github.com/Christoph551)
+[Leo Segura](https://github.com/lsegura06)
+[Joshua Minor](https://github.com/jminor90)
+[Logan Peterson](https://github.com/codeDevLogan)
+[Adam Hovda](https://github.com/adamhovda)
+[Michaela Jensine](https://github.com/mijensine23)
+[Ian Gurgoze](https://github.com/igurgoze)
+[Evan Towlerton](https://github.com/Etowww)
+
+Supervised by: [Rachel](https://github.com/rxtATX)
+## Technologies
+[Bootstrap](https://getbootstrap.com/)
+
+## Test
+
+
+## Questions
+For further questions contact any of the contributors above!
