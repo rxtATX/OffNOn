@@ -1,15 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>
-        Ticket Request 
-  </h1>
-</body>
-</html>    
+
+=======
+      <h1>
+        This is the dashboard handlebar!
+      </h1>
+
+
+
+
+
+
+
+
+
+
+{{!-- bottom half of the page --}}
+<section class="min-vh-100 py-2 bg-light">
+
+{{!-- table that includes all the ticket info --}}
+    <div class="position-absolute top-50 start-50 translate-middle col-6">
+    <table class="table table-bordered table-hover bg-white">
+    <thead class="table-primary">
+    <tr>
+        <th scope="col">Status</th>
+        <th scope="col">Description</th>
+        <th scope="col">Urgency</th>
+        <th scope="col">Client/Technician</th>
+        <th scope="col">Date</th>
+        <th scope="col">Link</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    {{!-- psuedo code for creating table rows
+    {{#each ticket}}
+        <tr>
+        <td>{{ticket.status}}</td>
+        <td>{{ticket.description}}</td>
+        <td>{{ticket.urgence}}</td>
+        <td>{{ticket.date}}</td>
+        <td><a href=/ticket>font awesome <I></I></a></td>
+    </tr>
+    {{/each}}
     
+    
+    --}}
+    {{!-- temporary rows that will be dynamically created instead --}}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>      
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+</section>
+
+
+>>>>>>> b50dfec2677ab24f42b0c625dac01f01f74485cf
