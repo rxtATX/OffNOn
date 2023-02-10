@@ -2,10 +2,11 @@ const router = require('express').Router();
 const { Log, User, Ticket } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/status?', async (req, res) => {
     try {
-        // Get all tickets and JOIN with user data
+        // Get all tickets with the specified status and JOIN with user data
         const ticketData = await Ticket.findAll({
+        where: {status: req.params.status},
             include: [
                 {
                     model: User,
@@ -27,16 +28,18 @@ router.get('/', async (req, res) => {
     }
 });
 
+
 router.get('/login', async (req, res) => {
     res.render('login', {
         title: "Login"
     });
 })
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard/status?', async (req, res) => {
     try {
         // Get all tickets and JOIN with user data
         const ticketData = await Ticket.findAll({
+            where: {status: req.params.status},
             include: [
                 {
                     model: User,
@@ -67,4 +70,3 @@ router.get('/ticket', async (req, res) => {
 
 
 module.exports = router;
-
