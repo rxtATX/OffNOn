@@ -19,7 +19,7 @@ const loginForm= async (event) => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        alert('Log in unsuccessful. Please, try again.  ');
+        alert('Log in unsuccessful. Please, try again.');
     }
     }
 };
