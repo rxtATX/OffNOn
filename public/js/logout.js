@@ -9,7 +9,7 @@ const logout = async () => {
     if (response.ok) {
         document.location.replace('/login');
     } else {
-        alert('Log out unsucceful. Please, try again.')
+        alert('Log out unsuccessful. Please, try again.')
     }
 };
 
