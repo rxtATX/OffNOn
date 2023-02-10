@@ -76,7 +76,11 @@ router.get('ticket/:id', withAuth, async (req,res) => {
         })
 
         const ticketIDSerialized = ticketID.get({ plain: true })
-        res.render('dashboard', ticketIDSerialized)
+        res.render('ticket', {
+            ticket: ticketIDSerialized,
+            title: ticketIDSerialized.ticket_title,
+            logged_in: req.session.logged_in
+        })
 	}
 	catch (err) {
 		console.log(err)
