@@ -1,10 +1,23 @@
-
-
-    <h1>
-        This is the dashboard handlebar!
-    </h1>
-
-
+{{!-- top half of the page --}}
+<section class="container min-vh-100 py-2">
+    <div class="row">
+        <div class="col">
+            <h2 class="d-flex justify-content-center">Your Tickets</h2>
+            <p id= "subhead" class= "d-flex justify-content-center">
+                You may view ALL tickets, or filter by status. 
+            </p>
+<div id=ticket-btns class= "d-flex justify-content-evenly">
+        <button id=unclaimed type="button" class="btn btn-secondary">Unclaimed</button>
+        <button id=pending type="button" class="btn btn-secondary">Pending</button>
+        <button id=resolved type="button" class="btn btn-secondary">Resolved</button>
+        <button id=claimed type="button" class="btn btn-secondary">Claimed</button>
+        <button id=all type="button" class="btn btn-secondary">ALL</button>
+    </div> 
+    <div class="btnIcon d-flex justify-content-center">
+        <button id="addBtn" class="btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+</section>
 
 
 
@@ -21,6 +34,7 @@
     <table class="table table-bordered table-hover bg-white">
     <thead class="table-primary">
     <tr>
+        <th scope="col"></th>
         <th scope="col">Status</th>
         <th scope="col">Description</th>
         <th scope="col">Urgency</th>
@@ -32,20 +46,21 @@
     </thead>
 
     <tbody>
-    {{!-- psuedo code for creating table rows
-    {{#each ticket}}
+    psuedo code for creating table rows
+    {{#each tickets}}
         <tr>
-        <td>{{ticket.status}}</td>
-        <td>{{ticket.description}}</td>
-        <td>{{ticket.urgence}}</td>
-        <td>{{ticket.client}}</td>
-        <td>{{ticket.date}}</td>
-        <td><a href=/ticket/{{id}}>font awesome <I></I></a></td>
+        <td></td>    
+        <td>{{tickets.status}}</td>
+        <td>{{tickets.ticket_title}}</td>
+        <td>{{tickets.urgency}}</td>
+        <td>{{tickets.user.first_name}} {{tickets.user.last_name}}</td>
+        <td>{{tickets.date_created}}</td>
+        <td><a href=/ticket/{{id}}><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
     </tr>
     {{/each}}
     
     
-    --}}
+   
     {{!-- temporary rows that will be dynamically created instead --}}
     <tr>
         <td></td>
@@ -74,5 +89,6 @@
 
 </section>
 
-
+<!-- Importing the closeModal Script [ET] -->
+<script src="/js/closeModal.js"></script>
 
