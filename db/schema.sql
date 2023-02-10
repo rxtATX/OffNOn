@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS offNon_db;
+
+CREATE DATABASE offNon_db;
