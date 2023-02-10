@@ -68,5 +68,30 @@ router.get('/ticket', async (req, res) => {
     });
 })
 
+router.get('ticket/:id', withAuth, async (req,res) => {
+	try {
+		const ticketID = await Ticket.findByPk(req.params.id, {
+            include : [
+                {
+                    model: Log,
+                }
+            ]
+        })
+
+        const ticketIDSerialized = ticketID.get({ plain: true })
+        res.render('ticket', {
+            ticket: ticketIDSerialized,
+            title: ticketIDSerialized.ticket_title,
+            logged_in: req.session.logged_in
+        })
+	}
+	catch (err) {
+		console.log(err)
+		render.status500.json(err);
+	}
+});
+
+
+
 
 module.exports = router;
