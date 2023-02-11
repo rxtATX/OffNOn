@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF-8">
+    <title>OffnOn</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/76d4e5f4ee.js" crossorigin="anonymous"> </script>
+</head>
+
+<div class="border border-2 border-primary container">
+<div class="container">
+    <div class="card mt-3 mb-3">
+        <div class="card-header bg-light">
+            <div class="float-end" style="font-size:medium">
+                <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+            </div>
+        </div>
+    </div>
+    <p>{{{dateFormat "h, m, A" timeStamp}}}</p>
+
+    <div class="card mt-3 mb-3">
+        <div class="card-header bg-light">
+            <div class="float-start" style="font-size:larger">
+                <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ticket_text}}</p>
+        </div>
+    </div>
+    <p class="mb-3">{{{dateFormat "h, m, A" timeStamp}}}</p>
+
+</div>
+<form id="#chat" class="d-flex bg-light justify-center mx-auto ">
+    <div class="p-2 w-100  text-wrap">
+        <textarea type="text" placeholder="Type message here" class="row h6 ml-4 col-11 h-6 mt-2"></textarea>
+        <input type="checkbox" class="h6 ml-4" id="hideMessage">
+        <label for="hideMessage" class="">Hide Message?</label><br>
+    </div>
+        <i class="fa-regular fa-solid fa-paper-plane fa-3x bg-primary text-white px-4 pt-4"></i>
+    </div>
+</form>
+</div>

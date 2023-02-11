@@ -20,7 +20,7 @@
                               <li class="timeline-item rounded ml-3 p-4 shadow">
                                   <div class="timeline-arrow" data-id="{{log.id}}"></div>
                               </li>
-                              <i class="fa fa-clock-o mr-1 ml-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{ format_date }}</span>
+                              <i class="fa fa-clock-o mr-1 ml-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{dateFormat "h, m, A" timeStamp}}}</span>
                             {{/each}}
                         </ul>
                     </div>
