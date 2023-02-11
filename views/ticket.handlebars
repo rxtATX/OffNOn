@@ -18,9 +18,10 @@
                         <ul class="timeline">
                             {{#each ticket.logs as |log|}}
                               <li class="timeline-item rounded ml-3 p-4 shadow">
-                                  <div class="timeline-arrow" data-id="{{log.id}}"></div>
+                                <div data-id="{{log.id}}">{{ticket_id}}</div>
+                                  <div class="timeline-arrow"></div>
                               </li>
-                              <i class="fa fa-clock-o mr-1 ml-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{dateFormat "h, m, A" timeStamp}}}</span>
+                              <i class="fa fa-clock-o mr-1 ml-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{ format_date date_created}}}</span>
                             {{/each}}
                         </ul>
                     </div>
