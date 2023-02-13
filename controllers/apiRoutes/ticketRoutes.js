@@ -16,5 +16,29 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.put('/api/ticket/:id', async (req, res) => {
+    try {
+
+        
+        
+        if (req.body.status === 'Claimed') {
+            req.body.tech_id = req.session.user_id;
+        }
+        
+        
+        const updatedTicket = await Ticket.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+
+        res.status(200).json({ message: 'Ticket updated successfully!', updatedTicket });
+    } catch (err){
+        res.status(500).json({ message: 'Failed to update ticket.', 
+        error: err});
+    }
+})
+
 
 module.exports = router;
