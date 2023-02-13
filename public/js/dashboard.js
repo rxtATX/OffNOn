@@ -1,35 +1,18 @@
+const ticketStatus = document.querySelector("#ticket-btns");
 
-const Unclaimed = document.querySelector('#unclaimed') 
-.addEventListener('click', function(event) { 
-  console.info(`Button Clicked!}`);
- });
+ticketStatus.addEventListener("click", function(event) {
+  var status = event.target;
 
-const Pending = document.querySelector('#pending')
-  .addEventListener('click', function (event) {
-    console.info(`Button Clicked!}`);
-  });
+  if (status.matches("button")) {
+    var filter = status.getAttribute("id");
+    if (filter === "all") {
+     return window.location.replace(`/`)
+    }
+    window.location.replace(`/${filter}`)
+  }
+  
+});
 
-const Resolved = document.querySelector('#resolved')
-  .addEventListener('click', function (event) {
-    console.info(`Button Clicked!}`);
-  });
-
-const Claimed = document.querySelector('#claimed')
-  .addEventListener('click', function (event) {
-    console.info(`Button Clicked!}`);
-  });
-
-const All = document.querySelector('#all') 
-.addEventListener('click', function(event) { 
-  console.info(`Button Clicked!}`);
- });
-
-
-
-
-
-
-
-
-
-
+const showClaimBtn = (status) => {
+// .claim
+}
