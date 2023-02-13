@@ -1,5 +1,8 @@
 // Start of Code [Evan Towlerton]
+
+// Find the modal within the DOM with the class "custom-modal-aw"
 const modal = document.querySelector(".custom-modal-aw");
+
 // Initiliaze the handleClickEvent function
 const handleClickEvent = async (event) => {
     //Prevent the page from reloading
@@ -10,7 +13,7 @@ const handleClickEvent = async (event) => {
     const description = document.querySelector("#description-input").value.trim();
     const urgency = document.querySelector("#urgency-input").value.trim();
 
-    // Checks to make sure title / description / urgency 
+    // Checks to make sure title / description / urgency exist
     if (title && description && urgency) {
 
         // Make a fetch call to the API endpoint to create a new ticket
