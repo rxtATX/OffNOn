@@ -1,7 +1,8 @@
-const Unclaimed = document.querySelector('#unclaimed')
-  .addEventListener('click', function (event) {
-    console.info(`Button Clicked!}`);
-  });
+
+const Unclaimed = document.querySelector('#unclaimed') 
+.addEventListener('click', function(event) { 
+  console.info(`Button Clicked!}`);
+ });
 
 const Pending = document.querySelector('#pending')
   .addEventListener('click', function (event) {
@@ -26,6 +27,9 @@ const All = document.querySelector('#all')
 
 
 
- const showClaimBtn = (status) => {
-// .claim
- }
+
+
+
+
+
+

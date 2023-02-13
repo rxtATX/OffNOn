@@ -51,8 +51,9 @@
     <tbody>
 
     {{#each tickets}}
+
         <tr>
-        <td></td>    
+        <td>{{#if (isOpen this.status)}}<button class="claim" id="{{id}}">Claim</button>{{/if}}</td>
         <td>{{this.status}}</td>
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
@@ -70,6 +71,9 @@
 <script src="/js/dashboard.js"></script>
 <!-- Importing the closeModal Script [ET] -->
 <script src="/js/closeModal.js"></script>
+
+
+
 
 
 
