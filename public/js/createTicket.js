@@ -34,6 +34,7 @@ const handleClickEvent = async (event) => {
 // Attach an event listener to the form with the id = ("#create")
 // which listens for a click event and then calls the handleClickEvent function
 // when the form is submitted
+
 document
     .querySelector("#create")
     .addEventListener("click", handleClickEvent);
@@ -44,6 +45,6 @@ function toggleNewTicket() {
     modal.classList.toggle("show-modal-aw");
 }
 
-// Attach an event listener to the button with id = addButton
+// Attach an event listener to the button with id = addBtn
 // Listens for click to make the newTicket modal visible
-document.getElementById("addButton").addEventListener("click", toggleNewTicket);
+document.getElementById("addBtn").addEventListener("click", toggleNewTicket);

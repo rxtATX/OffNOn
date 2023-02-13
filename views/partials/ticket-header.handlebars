@@ -3,7 +3,7 @@
         <h1>{{ticket.ticket_title}}</h1>
         <h4 class="status-button bg-primary px-3 my-auto rounded-pill text-white p-2">{{ticket.status}}</h4>
     </div>
-    <div class="card-body mx-4 font-weight-normal">
+    <div class="card-body mx-5 font-weight-normal">
         <h6>Description - {{ticket.ticket_text}}</h6>
         <h6 class="d-flex justify-content-end"> Opened by {{ticket.user.first_name}} {{ticket.user.last_name}} on {{{format_date ticket.date_created}}}</h6>
     </div>

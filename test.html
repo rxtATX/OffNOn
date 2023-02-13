@@ -10,17 +10,12 @@
 
 <div class="box border-primary container">
 
-    <div class="chatColors mt-3 mb-2 col-12 mx-auto hide-eye">
-		<p class="pt-3 pb-3 pl-2 card-text">{{log_text}}</p>
-	</div>
-    <p class="date-size mb-4 font-weight-light col-12 mx-auto">{{{dateFormat "h, m, A" timeStamp}}}</p>
-
-    <div class="chatColors mt-3 mb-2 col-12 mx-auto hide-eye chat-log" data-id="" data-hidden="false">
+    <div class="chatColors mt-3 mb-2 col-12 mx-auto hide-eye chat-log" data-id="{{log.id}}" data-hidden="false">
         <p class="pt-3 pb-3 pl-2 card-text">{{log_text}}</p>
     </div>
     <p class="date-size mb-4 font-weight-light col-12 mx-auto">{{{dateFormat "h, m, A" timeStamp}}}</p>
 
-    </div>
+</div>
 
     <form id="#chat" class="fixed-bottom chatColor border d-flex mx-auto mt-4">
 
