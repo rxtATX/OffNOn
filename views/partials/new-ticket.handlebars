@@ -1,6 +1,6 @@
 <div class="modal-content hidden-modal-aw" id="modal">
     <div class="modal-header">
-        <h1 class="modal-title fs-5">Create a New Ticket</h1>
+        <h1 class="modal-title fs-5 modal-title">Create a New TIcket</h1>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
@@ -13,20 +13,23 @@
                 <label class="form-label">Description</label>
                 <input class="form-control" id="description-input">
             </div>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="urgency-input" aria-label="Text input with dropdown button">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Level</button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="#">Low</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Medium</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">High</a>
-                    </li>
-                </ul>
+            <div class="mb-3">
+                <label class="form-label">Urgency</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="urgency-input" aria-label="Text input with dropdown button">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Level</button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="#">Low</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Medium</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">High</a>
+                            </li>
+                    </ul>
+                    </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit Request</button>
         </form>
