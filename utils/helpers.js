@@ -24,6 +24,14 @@ module.exports = {
         }`;
       },
 
+      // checks to see if the status of the ticket is open
+      isOpen: (status) => {
+        if (status === 'Open') {
+            return true;
+          }
+        
+      },
+
     renderUrgencyOptions: (urgency) => {
         switch (urgency) {
             case 'Medium':
@@ -104,4 +112,6 @@ module.exports = {
                 )
         }
     }
+
+      
 }
