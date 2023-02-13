@@ -56,7 +56,6 @@ li.timeline-item::before {
     color: #999;
 }
 
-<<<<<<< HEAD
 body{
     background:#eee;    
 }
@@ -193,7 +192,6 @@ body{
 
 .ticketBottom {
     margin-top: 200px;
-=======
 /*dashboard top half styling*/
 #dbHead {
     font-size: 50px;
@@ -214,5 +212,4 @@ body{
     background-color: #189ad3;
     border-radius: 60%;
 
->>>>>>> 80f04ff332b47b207a758f442594f04f9e6ce22f
 }
