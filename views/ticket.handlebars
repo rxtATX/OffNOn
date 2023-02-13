@@ -1,28 +1,30 @@
-{{#each tickets as |ticket|}}
 {{> ticket-header}}
-{{/each}}
 
-<div class="row">
+<div class="ticketBottom row">
 
       <div class="col-sm-12 col-md-6">
         <div class="card">
-          <div class="card-body bg-secondary">
+          <div class="card-body bg-light">
             <form id="ticketInfo">
 
-            <h2>{{ticket.ticket_title}}</h2>
+            <label class="form-label mt-2 font-weight-bold">Subject</label>
+            <input class="form-control" type="text" id="ticketSubject"  placeholder="ex: Modals" >
 
-            <label class="form-label mt-2">Subject</label>
-            <input class="form-control" type="text" id="ticketSubject"  placeholder="{{ticket.ticket_title}}" >
-
-            <label class="form-label mt-2">Description</label>
-            <textarea class="form-control" id="ticketDescription" rows="3" placeholder="{{ticket.ticket_text}}">{{ticket.ticket_text}}</textarea>
-            <label class="form-label mt-2">Urgency</label>
+            <label class="form-label mt-2 font-weight-bold">Description</label>
+            <textarea class="form-control" id="ticketDescription" rows="3" placeholder="ex: {{ticket.ticket_text}}"></textarea>
+            <div class="">
+                <label class="form-label mt-2 font-weight-bold">Urgency</label>
+            </div>
+            <div>
                 {{{renderUrgencyOptions ticket.urgency}}}
+            </div>
 
-
-            <label class="form-label mt-2">Status</label>
-                {{{renderStatus ticket.status}}}
-
+            <div>
+                <label class="form-label mt-2 font-weight-bold">Status</label>
+            </div>
+            <div>
+                    {{{renderStatus ticket.status}}}
+            </div>
 
             {{!-- <select class="form-select" id="statusSelect">
                 <option value="statusUnclaimed">Unclaimed</option>
@@ -32,12 +34,13 @@
                 <!-- add 'selected' to choose which is selected on load -->
             </select> --}}
 
-            <button type="button" class="mt-3 btn btn-primary" id="saveChanges">Save Changes</button>
+            <button type="button" class="mt-3 btn btn-primary col-12 mx-auto text-center " id="saveChanges">Save Changes</button>
 
             </form>
           </div>
         </div>
       </div>
+
 
     <div class="col-sm-12 col-md-6">
         <div class="container py-5">
