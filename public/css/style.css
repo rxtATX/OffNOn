@@ -55,3 +55,25 @@ li.timeline-item::before {
 .text-gray {
     color: #999;
 }
+
+/*dashboard top half styling*/
+#dbHead {
+    font-size: 50px;
+}
+
+#subhead{
+    font-size: 25px;
+    margin-top:30px;
+}
+
+#ticket-btns{
+    margin-top: 50px;
+    justify-content: space-evenly;
+}
+
+#addBtn{
+    margin-top: 50px;
+    background-color: #189ad3;
+    border-radius: 60%;
+
+}
