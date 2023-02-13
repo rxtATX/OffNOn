@@ -22,5 +22,15 @@ module.exports = {
           // We add five years to the 'year' value to calculate the end date
           new Date(date).getFullYear()
         }`;
+      },
+
+      // checks to see if the status of the ticket is open
+      isOpen: (status) => {
+        if (status === 'Open') {
+            return true;
+          }
+        
       }
+
+      
 }

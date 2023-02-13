@@ -1,3 +1,4 @@
+
 {{!-- top half of the page --}}
 <section class="container min-vh-100 py-2">
     <div class="row">
@@ -23,6 +24,7 @@
 
 {{!-- bottom half of the page --}}
 <section> 
+    
 
 {{!-- table that includes all the ticket info --}}
     <div class="position-absolute top-50 start-50 translate-middle col-6">
@@ -43,8 +45,9 @@
     <tbody>
 
     {{#each tickets}}
+
         <tr>
-        <td></td>    
+        <td>{{#if (isOpen this.status)}}<button class="claim" id="{{id}}">Claim</button>{{/if}}</td>
         <td>{{this.status}}</td>
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
@@ -62,6 +65,10 @@
 
 <!-- Importing the closeModal Script [ET] -->
 <script src="/js/closeModal.js"></script>
+
+{{!-- temp because someone else is handling --}}
+<script src="/js/dashboard.js"></script>
+
 
 
 
