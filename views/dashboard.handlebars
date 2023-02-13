@@ -49,7 +49,7 @@
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
         <td>{{this.user.first_name}} {{user.last_name}}</td>
-        <td>{{this.date_created}}</td>
+        <td>{{format_date this.date_created}}</td>
         <td><a href="/ticket/{{id}}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
     </tr>
     {{/each}}
