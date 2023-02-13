@@ -44,6 +44,6 @@ function toggleNewTicket() {
     modal.classList.toggle("show-modal-aw");
 }
 
-// Attach an event listener to the button with id = addButton
+// Attach an event listener to the button with id = addBtn
 // Listens for click to make the newTicket modal visible
-document.getElementById("addButton").addEventListener("click", toggleNewTicket);
+document.getElementById("addBtn").addEventListener("click", toggleNewTicket);
