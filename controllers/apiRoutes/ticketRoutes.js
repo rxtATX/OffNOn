@@ -19,16 +19,11 @@ router.post('/', async (req, res) => {
 router.put('/api/ticket/:id', async (req, res) => {
     try {
 
-        const ticketStatus = await User.findOne({ where: { id: req.params.id } });
+        
         
         if (req.body.status === 'Claimed') {
-            req.body.claimedBy = req.tech.id;
+            req.body.tech_id = req.session.user_id;
         }
-        
-        if (!ticketStatus) {
-            return res.status(404).json({ message: 'Ticket not found' });
-        }
-
         
         
         const updatedTicket = await Ticket.update(req.body, {
