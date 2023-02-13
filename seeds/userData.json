@@ -20,5 +20,13 @@
     "first_name": "Diana",
     "last_name": "Prince",
     "role": "Tech"
+  },
+  {
+    "id": 4,
+    "password":"goodjobyall",
+    "email": "admin@admin.com",
+    "first_name": "Admin",
+    "last_name": "Account",
+    "role": "Tech"
   }
 ]
