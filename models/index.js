@@ -30,11 +30,11 @@ User.hasMany(Log, {
 });
 
 Log.belongsTo(Ticket, {
-    foreignKey: 'log_id',
+    foreignKey: 'ticket_id',
 });
 
 Ticket.hasMany(Log, {
-    foreignKey: 'log_id',
+    foreignKey: 'ticket_id',
     onDelete: 'CASCADE'
 });
 

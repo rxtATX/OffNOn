@@ -1,5 +1,5 @@
 // Start of Code [Evan Towlerton]
-
+const modal = document.querySelector(".custom-modal-aw");
 // Initiliaze the handleClickEvent function
 const handleClickEvent = async (event) => {
     //Prevent the page from reloading
@@ -38,3 +38,13 @@ const handleClickEvent = async (event) => {
 document
     .querySelector("#create")
     .addEventListener("click", handleClickEvent);
+
+// Initialize the toggleNewTicket function on button click event
+function toggleNewTicket() {
+    // Make the newTicket modal visible to user by adding a new class which makes it visible
+    modal.classList.toggle("show-modal-aw");
+}
+
+// Attach an event listener to the button with id = addButton
+// Listens for click to make the newTicket modal visible
+document.getElementById("addButton").addEventListener("click", toggleNewTicket);
