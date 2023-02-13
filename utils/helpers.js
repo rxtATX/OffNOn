@@ -30,7 +30,88 @@ module.exports = {
             return true;
           }
         
-      }
+      },
+
+    renderUrgencyOptions: (urgency) => {
+        switch (urgency) {
+            case 'Medium':
+                return (
+                `<select class="form-select" id="urgencySelect">
+                    <option value="urgencyLow">Low</option>
+                    <option selected value="urgencyMedium">Medium</option>
+                    <option value="urgencyHigh">High</option>
+                </select>`
+                )
+            
+            case 'High':
+                return (
+                `<select class="form-select" id="urgencySelect">
+                    <option value="urgencyLow">Low</option>
+                    <option value="urgencyMedium">Medium</option>
+                    <option selected value="urgencyHigh">High</option>
+                </select>`
+                )
+
+            default:
+                return (
+                `<select class="form-select" id="urgencySelect">
+                    <option value="urgencyLow">Low</option>
+                    <option value="urgencyMedium">Medium</option>
+                    <option value="urgencyHigh">High</option>
+                </select>`
+                )
+            
+        }
+    },
+
+    renderStatus: (status) => {
+        switch (status) {
+            case 'Claimed':
+                return (
+                `<select class="form-select" id="statusSelect">
+                    <option value="statusUnclaimed">Unclaimed</option>
+                    <option selected value="statusClaimed">Claimed</option>
+                    <option value="statusPending">Pending</option>
+                    <option value="statusResolved">Resolved</option>
+                </select>
+                `
+                )
+            
+            case 'Pending':
+                return (
+                `<select class="form-select" id="statusSelect">
+                    <option value="statusUnclaimed">Unclaimed</option>
+                    <option value="statusClaimed">Claimed</option>
+                    <option selected value="statusPending">Pending</option>
+                    <option value="statusResolved">Resolved</option>
+                </select>
+                `
+                )
+
+            case 'Resolved':
+                return (
+                `<select class="form-select" id="statusSelect">
+                    <option value="statusUnclaimed">Unclaimed</option>
+                    <option value="statusClaimed">Claimed</option>
+                    <option value="statusPending">Pending</option>
+                    <option selected value="statusResolved">Resolved</option>
+                </select>
+                `
+                
+                )
+            
+            default:
+                return (
+                `<select class="form-select" id="statusSelect">
+                    <option value="statusUnclaimed">Unclaimed</option>
+                    <option value="statusClaimed">Claimed</option>
+                    <option value="statusPending">Pending</option>
+                    <option value="statusResolved">Resolved</option>
+                </select>
+                `
+                )
+        }
+    }
 
       
 }
