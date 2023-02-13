@@ -22,5 +22,5 @@ module.exports = {
           // We add five years to the 'year' value to calculate the end date
           new Date(date).getFullYear()
         }`;
-      }
+      },
 }
