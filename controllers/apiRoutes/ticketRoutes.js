@@ -17,5 +17,19 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.put('/api/ticket/:id', async (req, res) => {
+    try {
+        const updatedTicket = await Ticket.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.redirect(req.get());
+    } catch (err){
+        res.status(500).json(err);
+    }
+})
+
 
 module.exports = router;
