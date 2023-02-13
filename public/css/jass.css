@@ -3,6 +3,22 @@
     visibility: hidden;
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    background: #eee;
+    position: fixed;
+    left: calc(50% - 204px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0.3rem;
+    outline: 0;
+    z-index: 4;
+    width: 20vw;
+    height: 14vw;
+    text-align: center;
 }
 
 .show-modal-aw {
@@ -10,4 +26,24 @@
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    background: #eee;
+    position: fixed;
+    left: calc(50% - 204px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0.3rem;
+    outline: 0;
+    z-index: 4;
+    width: 20vw;
+    height: 14vw;
+    text-align: center;
+}
+
+.modal-title {
+    margin-left: 165px;
 }
