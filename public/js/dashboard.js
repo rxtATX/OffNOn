@@ -26,3 +26,6 @@ const All = document.querySelector('#all')
 
 
 
+ const showClaimBtn = (status) => {
+// .claim
+ }
