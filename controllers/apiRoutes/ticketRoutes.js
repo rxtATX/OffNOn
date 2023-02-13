@@ -18,15 +18,28 @@ router.post('/', async (req, res) => {
 
 router.put('/api/ticket/:id', async (req, res) => {
     try {
+        
+        if (req.body.status === 'Claimed') {
+            req.body.claimedBy = req.user.id;
+        }
+        
+        if (!ticket) {
+            return res.status(404).json({ message: 'Ticket not found' });
+        }
+
+        
+        
         const updatedTicket = await Ticket.update(req.body, {
             where: {
                 id: req.params.id
             }
         });
 
-        res.redirect(req.get());
+
+        res.status(200).json({ message: 'Ticket updated successfully!', updatedTicket });
     } catch (err){
-        res.status(500).json(err);
+        res.status(500).json({ message: 'Failed to update ticket.', 
+        error: err});
     }
 })
 
