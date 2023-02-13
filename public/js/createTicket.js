@@ -1,5 +1,5 @@
 // Start of Code [Evan Towlerton]
-const modal = document.querySelector(".custom-modal-aw");
+const modal = document.querySelector(".hidden-modal-aw");
 // Initiliaze the handleClickEvent function
 const handleClickEvent = async (event) => {
     //Prevent the page from reloading
