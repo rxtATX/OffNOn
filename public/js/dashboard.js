@@ -18,7 +18,14 @@ const Claimed = document.querySelector('#claimed')
     console.info(`Button Clicked!}`);
   });
 
-const All = document.querySelector('#all')
-  .addEventListener('click', function (event) {
-    console.info(`Button Clicked!}`);
-  });
+const All = document.querySelector('#all') 
+.addEventListener('click', function(event) { 
+  console.info(`Button Clicked!}`);
+ });
+
+
+
+
+ const showClaimBtn = (status) => {
+// .claim
+ }

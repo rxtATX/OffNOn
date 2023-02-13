@@ -1,38 +1,33 @@
 {{!-- top half of the page --}}
-<section class="container min-vh-100 py-2">
+<section class="container py-2">
     <div class="row">
         <div class="col">
             <h2 class="d-flex justify-content-center">Your Tickets</h2>
             <p id= "subhead" class= "d-flex justify-content-center">
                 You may view ALL tickets, or filter by status. 
             </p>
-<div id=ticket-btns class= "d-flex justify-content-evenly">
-        <button id="unclaimed" type="button" class="btn btn-secondary">Unclaimed</button>
-        <button id="pending" type="button" class="btn btn-secondary">Pending</button>
-        <button id="resolved" type="button" class="btn btn-secondary">Resolved</button>
-        <button id="claimed" type="button" class="btn btn-secondary">Claimed</button>
-        <button id="all" type="button" class="btn btn-secondary">ALL</button>
+<div id=ticket-btns class= "d-flex justify-content-center">
+        <button id="unclaimed" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Unclaimed</button>
+        <button id="pending" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Pending</button>
+        <button id="resolved" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Resolved</button>
+        <button id="claimed" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Claimed</button>
+        <button id="all" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">ALL</button>
     </div> 
-    <div class="btnIcon d-flex justify-content-center">
-        <button id="addBtn" class="btn"><i class="fa-solid fa-plus"></i></button>
+    <div class="btnIcon d-flex justify-content-center mt-3 mb-3 ">
+        <button id="addBtn" class="btn-primary rounded-circle shadow bg-body-tertiary"><i style="font-size:50px;" class="fa-solid fa-plus"></i></button>
         </div>
     </div>
+
 </section>
 
 
-
-
-
-
-
-
 {{!-- bottom half of the page --}}
-<section class="min-vh-100 py-2 bg-light">
+<section class="d-flex justify-content-center "> 
 
 {{!-- table that includes all the ticket info --}}
     <div class="position-absolute top-50 start-50 translate-middle col-6">
     <table class="table table-bordered table-hover bg-white">
-    <thead class="table-primary">
+    <thead class="table-secondary">
     <tr>
         <th scope="col"></th>
         <th scope="col">Status</th>
@@ -46,49 +41,32 @@
     </thead>
 
     <tbody>
-    psuedo code for creating table rows
+
     {{#each tickets}}
         <tr>
         <td></td>    
-        <td>{{tickets.status}}</td>
-        <td>{{tickets.ticket_title}}</td>
-        <td>{{tickets.urgency}}</td>
-        <td>{{tickets.user.first_name}} {{tickets.user.last_name}}</td>
-        <td>{{tickets.date_created}}</td>
-        <td><a href=/ticket/{{id}}><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+        <td>{{this.status}}</td>
+        <td>{{this.ticket_title}}</td>
+        <td>{{this.urgency}}</td>
+        <td>{{this.user.first_name}} {{user.last_name}}</td>
+        <td>{{this.date_created}}</td>
+        <td><a href="/ticket/{{id}}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
     </tr>
     {{/each}}
-    
-    
-   
-    {{!-- temporary rows that will be dynamically created instead --}}
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>      
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
     </tbody>
 </table>
 </div>
 
 </section>
 
+
 <!-- Importing the closeModal Script [ET] -->
 <script src="/js/closeModal.js"></script>
+
+
+
+
+
+
+
 
