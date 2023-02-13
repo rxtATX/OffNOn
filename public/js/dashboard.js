@@ -22,3 +22,10 @@ const All = document.querySelector('#all')
 .addEventListener('click', function(event) { 
   console.info(`Button Clicked!}`);
  });
+
+
+
+
+ const showClaimBtn = (status) => {
+// .claim
+ }
