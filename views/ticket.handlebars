@@ -69,9 +69,9 @@
                           </ul>
                             {{/each}}
                         {{!-- View Comments button needs to have event listener to trigger a modal that opens chat --}}
-                        <button data-toggle="modal" data-target="exampleModal" type="button" class="timeline-item rounded ml-3 p-2 shadow mb-3 mt-3" style="background-color:#007EFF; color:white;">
-                          <div style="display:flex; justify-content:center;" data-id="{{log.id}}">
-                            <b>View Comments</b>
+                        <button data-toggle="modal" data-target="exampleModal" type="button" class="mt-3 btn btn-primary mx-4">
+                          <div data-id="{{log.id}}">
+                            View Comments
                           </div>
                         </button>
 
@@ -81,9 +81,9 @@
     </div>
 </div>
 
-<div style="display:flex; justify-content:center;">
-  <button>
-    <i class="fa fa-plus"></i>
+<div style="display:flex; justify-content:center; margin-top:50px;">
+  <button href="/" type="button" class="fa-arrow-left:before mt-3 btn btn-primary mx-4">
+    <i class="fa fa-plus">Back</i>
   </button>
 </div>
 
