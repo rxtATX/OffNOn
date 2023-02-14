@@ -3,8 +3,12 @@ const { Log, User, Ticket } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/login', async (req, res) => {
+    if (req.session.logged_in){
+        res.redirect('/dashboard')
+    }
     res.render('login', {
-        title: "Login"
+        title: "Login",
+        layout: "login-layout"
     });
 })
 
@@ -37,7 +41,8 @@ router.get('/dashboard/:status?',withAuth, async (req, res) => {
         res.render('dashboard', {
             title: "Dashboard",
             tickets,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            layout: "login-layout"
         });
     } catch (err) {
         res.status(500).json(err);
@@ -45,9 +50,7 @@ router.get('/dashboard/:status?',withAuth, async (req, res) => {
 });
 
 router.get('/ticket',withAuth, async (req, res) => {
-    res.render('ticket', {
-        title: "Ticket"
-    });
+    res.redirect('/dashboard');
 })
 
 router.get('/ticket/:id', withAuth, async (req,res) => {
@@ -100,7 +103,8 @@ router.get('/:status?',withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('dashboard', {
             tickets,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            layout: "login-layout"
         });
     } catch (err) {
         res.status(500).json(err);
