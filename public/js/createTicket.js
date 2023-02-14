@@ -1,6 +1,6 @@
 // Start of Code [Evan Towlerton]
 
-// Find the modal within the DOM with the class "custom-modal-aw"
+// Find the modal within the DOM with the class "custom-modal-aw0"
 const modal = document.querySelector(".custom-modal-aw");
 
 // Initiliaze the handleClickEvent function
@@ -41,6 +41,8 @@ const handleClickEvent = async (event) => {
 document
     .querySelector("#create")
     .addEventListener("click", handleClickEvent);
+
+////////////////////////////////////////////////////////////////////////////////////////
 
 // Initialize the toggleNewTicket function on button click event
 function toggleNewTicket() {
