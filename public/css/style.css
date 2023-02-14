@@ -217,9 +217,12 @@ body.main-layout{
 }
 
 #addBtn{
-    margin-top: 50px;
-    background-color: #189ad3;
-    border-radius: 60%;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 #backBtn {
@@ -238,4 +241,26 @@ body.main-layout{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40%;
+}
+
+.bottomDashboard {
+    margin-left: 8%;
+    position: absolute;
+    bottom: 9%;
+}
+
+.ticketTable {
+    margin-right:50%;
+}
+
+@media screen and (max-width: 850px) {
+    .bottomDashboard {
+        padding-top: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .topDashboard {
+        top:16%;
+    }
 }
