@@ -7,7 +7,8 @@ router.post('/', async (req, res) => {
         const newTicket = await Ticket.create({
             ticket_title: req.body.ticket_title,
             ticket_text: req.body.ticket_text,
-            urgency: req.body.urgency
+            urgency: req.body.urgency,
+            client_id: req.session.user_id
         })
 
         res.status(200).json(newTicket);
