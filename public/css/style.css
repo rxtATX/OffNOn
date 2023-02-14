@@ -112,3 +112,7 @@ body{
     border-radius: 60%;
     
 }
+
+#noTickets {
+    text-align: center;
+}
