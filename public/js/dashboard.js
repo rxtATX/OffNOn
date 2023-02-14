@@ -13,9 +13,7 @@ ticketStatus.addEventListener("click", function(event) {
   
 });
 
-const showClaimBtn = (status) => {
-// .claim
-}
+
 
 /////////////////////////
 const claimBtn = document.querySelectorAll('.claim');

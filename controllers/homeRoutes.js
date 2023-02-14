@@ -11,6 +11,15 @@ router.get('/login', async (req, res) => {
     });
 })
 
+router.get('/about', async (req, res) => {
+    // if (req.session.logged_in){
+    //     res.redirect('/dashboard')
+    // }
+    res.render('about', {
+        title: "About"
+    });
+})
+
 router.get('/dashboard/:status?',withAuth, async (req, res) => {
     try {
 
