@@ -98,12 +98,12 @@ form.addEventListener('submit', submitNewMessage);
     // If the message is hidden add specific classes to the icon to make its appearance
     // Change to represent hidden
     if (data.is_hidden) {
-        hiddenIcon.classList.add('fa-solid', 'fa-eye-slash');
+        hiddenIcon.classList.add('fa-solid', 'fa-eye-slash', 'float-right');
 
     // If the message is not hidden add specific classes to the icon to make its appearance
     // Change to represent shown
     } else {
-        hiddenIcon.classList.add('fa-solid', 'fa-eye')
+        hiddenIcon.classList.add('fa-solid', 'fa-eye', 'float-right')
     }
 
     // Create a p element to hold the message text
