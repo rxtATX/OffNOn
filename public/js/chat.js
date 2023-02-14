@@ -84,27 +84,42 @@ const submitNewMessage = async (event) => {
 form.addEventListener('submit', submitNewMessage);
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+// Render Chat Messages [Evan Towlerton]
 
-// Render Chat Messages
+// Define the renderNewMessage function which will run on a successful response
+// from the submitNewMessage function
+ function renderNewMessage(data) {
+    // Create a container div to hold the message and the hidden icon
+    const messageContainer = document.createElement('div');
 
-// function renderNewMessage(data) {
-   // const messageContainer = document.createElement('div');
-
-    // const hiddenIcon = document.createElement('div');
+    // Create a div to hold the hidden icon
+    const hiddenIcon = document.createElement('div');
     
-    //if (data.is_hidden) {
+    // If the message is hidden add specific classes to the icon to make its appearance
+    // Change to represent hidden
+    if (data.is_hidden) {
+        hiddenIcon.classList.add('fa-solid', 'fa-eye-slash');
 
-    // }
+    // If the message is not hidden add specific classes to the icon to make its appearance
+    // Change to represent shown
+    } else {
+        hiddenIcon.classList.add('fa-solid', 'fa-eye')
+    }
 
-    // const messageText = document.createElement('p');
+    // Create a p element to hold the message text
+    const messageText = document.createElement('p');
 
-    // messageText.textcontent = data.log_text;
+    // Set the text content of the p element to the log_text from the server response
+    messageText.textcontent = data.log_text;
 
-    // messageContainer.appendChild(messageText);
+    // Append the hidden icon and message text to the message container
+    messageContainer.appendChild(hiddenIcon);
+    messageContainer.appendChild(messageText);
 
-    // Get the element to append the message container to
-    // const messageList = document.querySelector('#message-list');
+    // Get the message list element to append the message container to
+    const messageList = document.querySelector('#message-list');
 
-    // messageList.appendChild(messageContainer);
+    // Append the message container to the message list
+    messageList.appendChild(messageContainer);
 
-// }
+};
