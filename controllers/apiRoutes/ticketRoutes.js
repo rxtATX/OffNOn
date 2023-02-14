@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.put('/api/ticket/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
 
         
