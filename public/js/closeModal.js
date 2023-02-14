@@ -11,7 +11,7 @@ if (closeButton) {
         // If the drawer element exists remove the class show
         // By removing the show class this will close the modal 
         if (drawer) {
-            drawer.classList.remove('show');
+            drawer.classList.add('d-none');
         }
     }
 }
