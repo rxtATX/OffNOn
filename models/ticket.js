@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Log = require ('./log')
 
 class Ticket extends Model {}
 
@@ -48,6 +49,23 @@ Ticket.init(
         }
     },
     {
+        hooks : {
+            afterCreate: async (newLogData) => {
+                try {
+                    newLogData = await Log.create({
+                        user_id: newLogData.client_id,
+                        ticket_id: newLogData.id,
+                        log_text: 'Created'
+                    })
+
+                }
+                catch (err) {
+                    console.log(err)
+                }
+
+                return newLogData
+            }
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
