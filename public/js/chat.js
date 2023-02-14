@@ -20,7 +20,7 @@ const toggleHidden = async (event) => {
     // selected chat log
     const response = await fetch(`/api/ticket/${id}`, {
         method: 'POST',
-        body: JSON.stringify({ hidden: !hidden }),
+        body: JSON.stringify({ is_hidden: !hidden }),
         headers: { 'Content-Type': 'application/json' }
     });
 
@@ -41,7 +41,7 @@ hideEyeElements.forEach(element => {
 // Submitting Chat Messages [Evan Towlerton]
 
 // Target the chat log with a query selector
-//const form = document.querySelector('#chat-log-form');
+const form = document.querySelector('#chat-log-form');
 
 // Define the submitNewMessage function which will be called in response to a click event
 // on the element with the class 'submit-message'
@@ -49,9 +49,10 @@ const submitNewMessage = async (event) => {
     // Prevent the page from reloading
     event.preventDefault();
 
+
     // Capture the input field and checkbox values from the checkbox values from the form
-    //const input = form.querySelector('#message-input');
-    //const checkbox = form.querySelector('#is-hidden-input');
+    const input = form.querySelector('#message-input');
+    const checkbox = form.querySelector('#is-hidden-input');
 
     // Checks to make sure the input value has any length
     if (input.value.length) {
