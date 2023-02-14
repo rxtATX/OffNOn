@@ -131,36 +131,35 @@ module.exports = {
     
     
     // helper function to renderNewMessage for ticket chat
-    renderNewMessage: (msg) => {
-        const userID = req.session.user_id;
-        // Should make selecting the user more
-        if(userID === 3) {
+    renderNewMessage: (msg, currentUser, ticket) => {
+        const client = ticket.client;
+        const tech = ticket.tech;
+
+        console.log(msg, currentUser)
+        if(msg.user_id === currentUser) {
             return ( // This should be the styling for the technician
-                `<div class="card mt-3 mb-3">
-                <div class="card-header" style="background-color:silver">
-                    <div class="float-end" style="font-size:larger">
-                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text float-end">{{ticket_text}}</p>
-                </div>
+            `<li class="clearfix">
+            <div class="message-data align-right">
+            <span class="message-data-name"><b>You</b></span> <i class="fa fa-circle me"></i>
             </div>
-            <p>{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            <div class="message me-message float-right">${msg.log_text}
+            <div class='fa-solid float-right ${msg.is_hidden ? 'fa-eye-slash' : 'fa-eye'}'></div>
+            </div>
+        <p class="mb-3 float-right">${msg.date_created}</p>
+        </li>`
             )
         } else {
             return ( // This should be the styling for the user
-                `<div class="card mt-3 mb-3">
-                <div class="card-header" style="background-color:#007EFF">
-                    <div class="float-start" style="font-size:larger">
-                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{ticket_text}}</p>
-                </div>
+            `<li>
+            <div class="message-data">
+            <span class="message-data-name"><i class="fa fa-circle you"></i> <b>${currentUser === client.id ? client.first_name : tech.first_name}</b></span>
             </div>
-            <p class="mb-3">{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            <div class="message you-message">
+            ${msg.log_text}
+            <div class='fa-solid float-right ${msg.is_hidden ? 'fa-eye-slash' : 'fa-eye'}'></div>
+            </div>
+        <p class="mb-3">${msg.date_created}</p>
+        </li>`
             )
             
         }
