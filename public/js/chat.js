@@ -20,7 +20,7 @@ const toggleHidden = async (event) => {
     // selected chat log
     const response = await fetch(`/api/ticket/${id}`, {
         method: 'POST',
-        body: JSON.stringify({ hidden: !hidden }),
+        body: JSON.stringify({ is_hidden: !hidden }),
         headers: { 'Content-Type': 'application/json' }
     });
 

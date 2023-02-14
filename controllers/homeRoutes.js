@@ -57,6 +57,16 @@ router.get('/ticket/:id', withAuth, async (req,res) => {
             include : [
                 {
                     model: Log,
+                },
+                {
+                    model: User,
+                    as: 'client',
+                    attributes: ['id', 'first_name', 'last_name'],
+                },
+                {
+                    model: User,
+                    as: 'tech',
+                    attributes: ['id', 'first_name', 'last_name'],
                 }
             ]
         })
@@ -90,18 +100,24 @@ router.get('/:status?',withAuth, async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['first_name', 'last_name'],
+                    as: 'client',
+                    attributes: ['id', 'first_name', 'last_name'],
                 },
+                {
+                    model: User,
+                    as: 'tech',
+                    attributes: ['id', 'first_name', 'last_name'],
+                }
             ],
         });
 
         // Serialize data so the template can read it
         const tickets = ticketData.map((ticket) => ticket.get({ plain: true }));
-
         // Pass serialized data and session flag into template
         res.render('dashboard', {
             tickets,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
