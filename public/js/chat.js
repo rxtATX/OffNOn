@@ -49,6 +49,8 @@ const submitNewMessage = async (event) => {
     // Prevent the page from reloading
     event.preventDefault();
 
+    // Find the ticketId from the window
+    const ticketId = window.location.pathname.split('/').pop()
 
     // Capture the input field and checkbox values from the checkbox values from the form
     const input = form.querySelector('#message-input');
@@ -61,7 +63,8 @@ const submitNewMessage = async (event) => {
             method: 'POST',
             body: JSON.stringify({
                 log_text: input.value,
-                is_hidden: checkbox.value
+                is_hidden: checkbox.value,
+                ticket_id: ticketId 
             }),
             headers: { 'Content-Type': 'application/json' }
         });
@@ -77,6 +80,9 @@ const submitNewMessage = async (event) => {
         }
     };
 };
+// Add a submit event Listener to the chat log form
+form.addEventListener('submit', submitNewMessage);
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 // Render Chat Messages
