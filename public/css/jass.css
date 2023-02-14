@@ -14,7 +14,7 @@
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 0.3rem;
     outline: 0;
-    z-index: 2;
+    z-index: -1;
     padding: 50vh 3.5em;
     text-align: center;
     top: 0;
@@ -38,7 +38,7 @@
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 0.3rem;
     outline: 0;
-    z-index: 2;
+    z-index: 402;
     padding: 50vh 3.5em;
     text-align: center;
     top: 0;
