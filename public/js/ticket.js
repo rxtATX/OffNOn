@@ -28,11 +28,11 @@
 
 
 
-function clModal () {
+function chatlogModal () {
     modal.classList.toggle("show-modal")
 }
 
-document.getElementById ("")
+document.getElementById ("ticket-item").addEventListener ("click", chatlogModal);
 
 
 
