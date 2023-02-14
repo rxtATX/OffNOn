@@ -4,25 +4,26 @@ const submitEventHandler = async (event) => {
     const text = document.querySelector('#ticketDescription').value.trim();
     const urgency = document.querySelector('#urgencySelect').value.trim();
     const status = document.querySelector('#statusSelect').value.trim();
+    const id = document.location.pathname.split("/").pop()
+    if ( title && text && urgency && status){
 
-    
-    const response = await fetch('/api/ticket/:id', {
-        method: 'PUT',
-        body: JSON.stringify({
-            title,
-            text,
-            urgency,
-            status
-        }),
-        headers: { 'Content-Type': 'application/json' }
-    });
-    console.log("Submitted")
-
-    if (response.ok) {
-        const data = await response.json()
-        document.location.replace(`/ticket/${data.id}`)
-    } else {
-        alert('Ticket not Submitted. Please, try again.');
+        const response = await fetch(`/api/ticket/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                ticket_title: title,
+                ticket_text: text,
+                urgency: urgency,
+                status: status
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (response.ok) {
+            const data = await response.json()
+            document.location.replace(`/ticket/${data.id}`)
+        } else {
+            alert('Ticket not Submitted. Please, try again.');
+        }
     }
 };
 
