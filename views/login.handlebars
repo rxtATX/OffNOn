@@ -1,19 +1,21 @@
-<form class="login-form mx-auto bg-primary w-50">
-    <div class="mx-auto form-group row pt-4">
-        <label for="staticEmail" class="fs-4 col-sm-2 col-form-label text-white fw-bold">email:</label>
-        <div class="mx-auto col-sm-10 col-md-6">
+<body class="bgColors">
+<form class="login-form mx-auto bg-primary rounded">
+    <div class="mx-auto form-group row pt-3">
+        <div class="mx-auto col-sm-10 col-md-8 pt-5">
+            <label for="staticEmail" class="fs-4 col-sm-2 col-form-label text-white font-weight-bold">Email</label>
             <input type="text" id="email-login" class="form-control">
         </div>
     </div>
     <div class="form-group row mx-auto">
-        <label for="inputPassword" class="fs-4 col-sm-2 col-form-label text-white fw-bold">Password:</label>
-        <div class="mx-auto col-sm-10 col-md-6  pb-2">
+        <div class="mx-auto col-sm-10 col-md-8 pb-2 mb-4">
+            <label for="inputPassword" class="col-sm-2 col-form-label text-white text-center font-weight-bold">Password</label>
             <input type="password" class="form-control" id="password-login">
         </div>
     </div>
-    <div class="form-group row position-relative">
-        <button type="submit" class="btn btn-light mx-auto mb-4 fw-bold" id="login-button">Login</button>
+    <div class="form-group row position-relative mt-4 pb-5">
+        <button type="submit" class="btn btn-light mb-4 font-weight-bold mx-auto col-sm-10 col-md-7" id="login-button">Login</button>
     </div>
 </form>
+</body>
 
 <script src="/js/login.js"></script>
