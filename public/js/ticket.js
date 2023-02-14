@@ -30,3 +30,21 @@ const submitEventHandler = async (event) => {
 document
     .querySelector('#ticketInfo')
     .addEventListener('submit', submitEventHandler);
+
+
+//initialize the function for the button/chat element click event
+function chatlogModal () {
+    if (modal.classList.contains ("hidden-modal-aw")) {
+        modal.classList.remove ("hidden-modal-aw");
+        modal.classList.add("show-modal-aw");
+    } else{
+        modal.classList.add("hidden-modal-aw");
+        modal.classList.remove("show-modal-aw");
+    }
+
+    }
+
+
+//
+document.getElementById ("viewComment").addEventListener ("click", chatlogModal);
+

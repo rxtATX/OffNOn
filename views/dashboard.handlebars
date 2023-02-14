@@ -1,19 +1,20 @@
 {{> new-ticket}}
 
 {{!-- top half of the page --}}
-<section class="container py-2">
+<section class="topDashboard container py-2 mx-auto">
     <div class="row">
         <div class="col">
             <h2 id="dbHead" class="d-flex justify-content-center">Your Tickets</h2>
             <p id= "subhead" class= "d-flex justify-content-center">
                 You may view ALL tickets, or filter by status. 
             </p>
+
 <div id="ticket-btns" class= "d-flex justify-content-center">
-        <button id="open" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Open</button>
-        <button id="pending" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Pending</button>
-        <button id="resolved" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Resolved</button>
-        <button id="claimed" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Claimed</button>
-        <button id="all" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">All</button>
+        <button id="open" type="button" class="ticketStatus btn btn-primary m-3 shadow bg-body-tertiary rounded font-weight-bold">Open</button>
+        <button id="pending" type="button" class="ticketStatus btn btn-primary m-3 shadow bg-body-tertiary rounded font-weight-bold">Pending</button>
+        <button id="resolved" type="button" class="ticketStatus btn btn-primary m-3 shadow bg-body-tertiary rounded font-weight-bold">Resolved</button>
+        <button id="claimed" type="button" class="ticketStatus btn btn-primary m-3 shadow bg-body-tertiary rounded font-weight-bold">Claimed</button>
+        <button id="all" type="button" class="ticketStatus btn btn-primary m-3 shadow bg-body-tertiary rounded font-weight-bold">All</button>
     </div> 
     <div class="btnIcon d-flex justify-content-center mt-3 mb-3 ">
         <button id="addBtn" class="btn-primary rounded-circle shadow bg-body-tertiary"><i style="font-size:50px;" class="fa-solid fa-plus"></i></button>
@@ -22,19 +23,13 @@
 
 </section>
 
-
-
-
-
-
-
-
 {{!-- bottom half of the page --}}
-<section class="d-flex justify-content-center "> 
+<section class="bottomDashboard"> 
 
+{{#if tickets}}
 {{!-- table that includes all the ticket info --}}
-    <div class="position-absolute top-50 start-50 translate-middle col-6">
-    <table class="table table-bordered table-hover bg-white">
+    <div class="col-12">
+    <table class="table table-bordered table-hover bg-white" align="center">
     <thead class="table-secondary">
     <tr>
         <th scope="col"></th>
@@ -54,7 +49,7 @@
     {{#each tickets}}
 
         <tr>
-        <td>{{#if (isOpen this.status)}}<button class="claim" id="{{id}}">Claim</button>{{/if}}</td>
+        <td>{{#if (isOpen this.status)}}<button class="claim" data-id="{{id}}" id="{{id}}">Claim</button>{{/if}}</td>
         <td>{{this.status}}</td>
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
@@ -67,6 +62,10 @@
     </tbody>
 </table>
 </div>
+{{else}}
+<h5 id="noTickets">No tickets to display. <br> Please filter by a different criteria.</h5>
+{{/if}}
+
 
 </section>
 
@@ -75,7 +74,6 @@
 <script src="/js/createTicket.js"></script>
 <!-- Importing the closeModal Script [ET] -->
 <script src="/js/closeModal.js"></script>
-
 
 
 

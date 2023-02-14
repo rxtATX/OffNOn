@@ -7,7 +7,17 @@ router.get('/login', async (req, res) => {
         res.redirect('/dashboard')
     }
     res.render('login', {
-        title: "Login"
+        title: "Login",
+        layout: "login-layout"
+    });
+})
+
+router.get('/about', async (req, res) => {
+    // if (req.session.logged_in){
+    //     res.redirect('/dashboard')
+    // }
+    res.render('about', {
+        title: "About"
     });
 })
 
@@ -40,7 +50,8 @@ router.get('/dashboard/:status?',withAuth, async (req, res) => {
         res.render('dashboard', {
             title: "Dashboard",
             tickets,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            layout: "login-layout"
         });
     } catch (err) {
         res.status(500).json(err);
@@ -119,6 +130,7 @@ router.get('/:status?',withAuth, async (req, res) => {
         res.render('dashboard', {
             tickets,
             logged_in: req.session.logged_in,
+            layout: "login-layout",
             user_id: req.session.user_id
         });
     } catch (err) {
