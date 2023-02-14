@@ -37,27 +37,27 @@ module.exports = {
             case 'Medium':
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option selected value="urgencyMedium">Medium</option>
-                    <option value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option selected value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>`
                 )
             
             case 'High':
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option value="urgencyMedium">Medium</option>
-                    <option selected value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option selected value="High">High</option>
                 </select>`
                 )
 
             default:
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option value="urgencyMedium">Medium</option>
-                    <option value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>`
                 )
             
@@ -69,10 +69,10 @@ module.exports = {
             case 'Claimed':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option selected value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option selected value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
@@ -80,10 +80,10 @@ module.exports = {
             case 'Pending':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option selected value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option selected value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
@@ -91,10 +91,10 @@ module.exports = {
             case 'Resolved':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option selected value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option selected value="Resolved">Resolved</option>
                 </select>
                 `
                 
@@ -103,10 +103,10 @@ module.exports = {
             default:
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
