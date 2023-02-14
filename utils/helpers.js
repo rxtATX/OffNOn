@@ -53,27 +53,27 @@ module.exports = {
             case 'Medium':
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option selected value="urgencyMedium">Medium</option>
-                    <option value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option selected value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>`
                 )
             
             case 'High':
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option value="urgencyMedium">Medium</option>
-                    <option selected value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option selected value="High">High</option>
                 </select>`
                 )
 
             default:
                 return (
                 `<select class="form-select" id="urgencySelect">
-                    <option value="urgencyLow">Low</option>
-                    <option value="urgencyMedium">Medium</option>
-                    <option value="urgencyHigh">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>`
                 )
             
@@ -85,10 +85,10 @@ module.exports = {
             case 'Claimed':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option selected value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option selected value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
@@ -96,10 +96,10 @@ module.exports = {
             case 'Pending':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option selected value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option selected value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
@@ -107,10 +107,10 @@ module.exports = {
             case 'Resolved':
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option selected value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option selected value="Resolved">Resolved</option>
                 </select>
                 `
                 
@@ -119,15 +119,55 @@ module.exports = {
             default:
                 return (
                 `<select class="form-select" id="statusSelect">
-                    <option value="statusUnclaimed">Unclaimed</option>
-                    <option value="statusClaimed">Claimed</option>
-                    <option value="statusPending">Pending</option>
-                    <option value="statusResolved">Resolved</option>
+                    <option value="Unclaimed">Unclaimed</option>
+                    <option value="Claimed">Claimed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
                 </select>
                 `
                 )
         }
+    },
+    
+    
+    // helper function to renderNewMessage for ticket chat
+    renderNewMessage: (msg) => {
+        const userID = req.session.user_id;
+        // Should make selecting the user more
+        if(userID === 3) {
+            return ( // This should be the styling for the technician
+                `<div class="card mt-3 mb-3">
+                <div class="card-header" style="background-color:silver">
+                    <div class="float-end" style="font-size:larger">
+                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text float-end">{{ticket_text}}</p>
+                </div>
+            </div>
+            <p>{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            )
+        } else {
+            return ( // This should be the styling for the user
+                `<div class="card mt-3 mb-3">
+                <div class="card-header" style="background-color:#007EFF">
+                    <div class="float-start" style="font-size:larger">
+                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ticket_text}}</p>
+                </div>
+            </div>
+            <p class="mb-3">{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            )
+            
+        }
     }
+    
+    
+    
+    
 
-      
 }

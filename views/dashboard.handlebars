@@ -4,11 +4,11 @@
 <section class="container py-2">
     <div class="row">
         <div class="col">
-            <h2 id=dbHead class="d-flex justify-content-center">Your Tickets</h2>
+            <h2 id="dbHead" class="d-flex justify-content-center">Your Tickets</h2>
             <p id= "subhead" class= "d-flex justify-content-center">
                 You may view ALL tickets, or filter by status. 
             </p>
-<div id=ticket-btns class= "d-flex justify-content-center">
+<div id="ticket-btns" class= "d-flex justify-content-center">
         <button id="open" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Open</button>
         <button id="pending" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Pending</button>
         <button id="resolved" type="button" class="btn btn-primary m-3 shadow bg-body-tertiary rounded">Resolved</button>
@@ -41,7 +41,8 @@
         <th scope="col">Status</th>
         <th scope="col">Description</th>
         <th scope="col">Urgency</th>
-        <th scope="col">Client/Technician</th>
+        <th scope="col">Client</th>
+        <th scope="col">Technician</th>
         <th scope="col">Date</th>
         <th scope="col">Link</th>
 
@@ -57,7 +58,8 @@
         <td>{{this.status}}</td>
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
-        <td>{{this.user.first_name}} {{user.last_name}}</td>
+        <td>{{this.client.first_name}} {{this.client.last_name}}</td>
+        <td>{{this.tech.first_name}} {{this.tech.last_name}}</td>
         <td>{{format_date this.date_created}}</td>
         <td><a href="/ticket/{{id}}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
     </tr>
@@ -67,6 +69,7 @@
 </div>
 
 </section>
+
 
 <script src="/js/dashboard.js"></script>
 <script src="/js/createTicket.js"></script>

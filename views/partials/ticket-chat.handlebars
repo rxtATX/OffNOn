@@ -1,35 +1,88 @@
-<div class="container">
-
-    <div class="card mt-3 mb-3">
-        <div class="card-header" style="background-color:silver">
-            <div class="float-end" style="font-size:larger">
-                <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+{{!-- <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="container">
+        <div class="card mt-3 mb-3">
+            <div class="card-header" style="background-color:silver">
+                <div class="float-end" style="font-size:larger">
+                    <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text float-end">{{ticket_text}}</p>
             </div>
         </div>
-        <div class="card-body">
-            <p class="card-text float-end">{{ticket_text}}</p>
-        </div>
+        <p class="mb-3">{{{format_date "h, m, A" timeStamp}}}</p>
     </div>
-    <p>{{{dateFormat "h, m, A" timeStamp}}}</p>
 
-
-    <div class="card mt-3 mb-3">
-        <div class="card-header" style="background-color:silver">
-            <div class="float-start" style="font-size:larger">
-                <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+    <div class="container">
+        <div class="card mt-3 mb-3">
+            <div class="card-header" style="background-color:#007EFF">
+                <div class="float-start" style="font-size:larger">
+                    <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ticket_text}}</p>
             </div>
         </div>
-        <div class="card-body">
-            <p class="card-text">{{ticket_text}}</p>
-        </div>
-    </div>
-    <p class="mb-3">{{{dateFormat "h, m, A" timeStamp}}}</p>
-
-
-    <div class="input-group mt-3">
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <p class="mb-3">{{{format_date "h, m, A" timeStamp}}}</p>
     </div>
 
-    <a href="#" class="btn btn-primary mt-3" style="display:flex; justify-content:center;">Add New Comment</a>
+    <div class="container">
+        <form id="#chat" class="d-flex bg-light justify-center mx-auto ">
+            <div class="p-2 w-100  text-wrap">
+                <textarea type="text" placeholder="Type message here" class="row h6 ml-4 col-11 h-6 mt-2"></textarea>
+                    <input type="checkbox" class="h6 ml-4" id="hideMessage">
+                    <label for="hideMessage" class="">Hide Message?</label>
+                    <br>
+            </div>
+            <i class="fa-regular fa-solid fa-paper-plane fa-3x bg-primary text-white px-4 pt-4"></i>
+            </div>
+        </form>
+    </div>
+</div> --}}
 
+<div class="chat mt-3 mb-3" style="border-radius:.5em; background-color:darkgrey">   
+    <div class="chat-history">
+        <ul class="chat-ul" id="message-list">
+            {{!-- This is the chat bubble for the technician --}}
+            <li>
+                <div class="message-data">
+                    <span class="message-data-name"><i class="fa fa-circle you"></i> <b>{{ user.first_name }}</b></span>
+                </div>
+                <div class="message you-message">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab est quas obcaecati nihil quo numquam, sint quos alias odio asperiores facilis nulla, debitis iure eligendi consequatur repudiandae vitae ea consequuntur.
+                </div>
+            </li>
+            <p class="mb-3">{{{format_date "h, m, A" timeStamp}}}</p>
+
+            {{!-- This is the chat bubble for the user --}}
+            <li class="clearfix">
+                <div class="message-data align-right">
+                    <span class="message-data-name"><b>You</b></span> <i class="fa fa-circle me"></i>
+                </div>
+                <div class="message me-message float-right"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab est quas obcaecati nihil quo numquam, sint quos alias odio asperiores facilis nulla, debitis iure eligendi consequatur repudiandae vitae ea consequuntur.</div>
+            </li>
+            <p class="mb-3 float-right">{{{format_date "h, m, A" timeStamp}}}</p>
+
+        </ul>
+        <form id="#chat" class="d-flex bg-light justify-center mx-auto mt-3">
+            <div class="p-2 w-100  text-wrap">
+                <textarea type="text" placeholder="Type message here" class="row h6 ml-4 col-11 h-6 mt-2"></textarea>
+                    <input type="checkbox" class="h6 ml-4" id="hideMessage">
+                    <label for="hideMessage" class="">Hide Message?</label>
+                    <br>
+            </div>
+                    <button class="mt-3"><i class="fa-regular fa-solid fa-paper-plane fa-4x bg-primary text-white px-3 pb-4 pt-4"></i></button>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+{{!-- I need these Query Selectors to be added [Evan Towlerton] --}}
+{{!-- The chat log form needs the id #chat-log-form --}}
+{{!-- The message input field needs the id #message-input --}}
+{{!-- The checkbox for hidden needs the id #is-hidden-input --}}
+{{!-- The actual chat log needs the id #message-list --}}
+{{!-- Delete these comments when finished --}}
+
