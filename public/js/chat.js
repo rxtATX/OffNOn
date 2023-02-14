@@ -80,6 +80,9 @@ const submitNewMessage = async (event) => {
         }
     };
 };
+// Add a submit event Listener to the chat log form
+form.addEventListener('submit', submitNewMessage);
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 // Render Chat Messages
