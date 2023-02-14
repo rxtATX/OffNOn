@@ -28,9 +28,12 @@
 
 
 
-document
-.querySelector('.timeline-item')
-.addEventListener('click', timeline-item);
+function clModal () {
+    modal.classList.toggle("show-modal")
+}
+
+document.getElementById ("")
+
 
 
 
