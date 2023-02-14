@@ -2,7 +2,6 @@
   {
     "id": 1,
     "client_id": 1,
-    "tech_id": 3,
     "ticket_title": "Modals",
     "ticket_text": "How do I create a Modal?",
     "date_created": "09/09/2022",
@@ -23,7 +22,6 @@
   {
     "id": 3,
     "client_id": 1,
-    "tech_id": 3,
     "ticket_title": "CSS",
     "ticket_text": "How do I center an element on a page?",
     "date_created": "04/22/2022",
@@ -33,7 +31,6 @@
   {
     "id": 4,
     "client_id": 1,
-    "tech_id": 3,
     "ticket_title": "SQL Database Tables",
     "ticket_text": "How do I create a new table in SQL?",
     "date_created": "01/26/2023",
