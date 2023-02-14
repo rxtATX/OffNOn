@@ -34,9 +34,9 @@ document
 
 //initialize the function for the button/chat element click event
 function chatlogModal () {
-    modal.classList.toggle("show-modal")
+    modal.classList.toggle("chat")
 }
 
 //
-document.getElementById ("ticket-item").addEventListener ("click", chatlogModal);
+document.getElementById ("viewComment").addEventListener ("click", chatlogModal);
 
