@@ -114,10 +114,10 @@ module.exports = {
     },
     
     
-    // helper function to renderNewMessage
+    // helper function to renderNewMessage for ticket chat
     renderNewMessage: (msg) => {
         const userID = req.session.user_id;
-        // Should make selecting the user more dynamic
+        // Should make selecting the user more
         if(userID === 3) {
             return ( // This should be the styling for the technician
                 `<div class="card mt-3 mb-3">
