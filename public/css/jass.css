@@ -67,3 +67,8 @@ top: 25px;
     width: 100%;
     padding: 1em;
 }
+
+
+.fixed-top {
+    z-index: 3;
+}
