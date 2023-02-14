@@ -190,15 +190,13 @@ body{
     background-color: rgb(226, 226, 226);
 }
 
-#noTickets{
-    text-align: center;
-}
 .ticketBottom {
     margin-top: 200px;
+}
 /*dashboard top half styling*/
 #dbHead {
     font-size: 50px;
-}
+}    
 
 #subhead{
     font-size: 25px;
@@ -215,4 +213,20 @@ body{
     background-color: #189ad3;
     border-radius: 60%;
     
+}
+
+#noTickets{
+    text-align: center;
+}
+
+.profilePic {
+    padding: 20px;
+}
+
+.profileName {
+    
+}
+
+#aboutTitle {
+    padding-bottom: 100px;
 }
