@@ -44,6 +44,7 @@ const handleClickEvent = async (event) => {
 document
     .querySelector("#create")
     .addEventListener("click", handleClickEvent);
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Initialize the toggleNewTicket function on button click event
 function toggleNewTicket() {
@@ -55,6 +56,3 @@ function toggleNewTicket() {
 // Listens for click to make the newTicket modal visible
 document.getElementById("addBtn").addEventListener("click", toggleNewTicket);
 
-// Attach an event listener to the button with id = addBtn
-// Listens for click to make the newTicket modal visible
-document.getElementById("addBtn").addEventListener("click", toggleNewTicket);
