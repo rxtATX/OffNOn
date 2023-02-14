@@ -4,20 +4,24 @@ const Ticket = require('./ticket');
 
 User.hasMany(Ticket, {
     foreignKey: 'client_id',
+    as: 'client',
     onDelete: 'CASCADE'
 });
 
 User.hasMany(Ticket, {
     foreignKey: 'tech_id',
+    as: 'tech',
     onDelete: 'CASCADE'
 })
 
 Ticket.belongsTo(User, {
     foreignKey: 'client_id',
+    as: 'client'
 });
 
 Ticket.belongsTo(User, {
     foreignKey: 'tech_id',
+    as: 'tech'
 })
 
 Log.belongsTo(User, {
