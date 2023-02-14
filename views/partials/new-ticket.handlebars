@@ -1,9 +1,9 @@
-<div class="modal-content hidden-modal-aw" id="modal">
-    <div class="modal-header">
-        <h1 class="modal-title fs-5 modal-title-aw">Create a New TIcket</h1>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
+<div class="hidden-modal-aw d-none" id="modal">
+
+        <h1>Create a New Ticket</h1>
+        <button type="button" class="close x-aw" data-bs-dismiss="modal" aria-label="Close"><p>X</p></button>
+    
+    <div class="modal-body modal-body-aw">
         <form id="create">
             <div class="mb-3">
                 <label class="form-label">Subject</label>
@@ -16,15 +16,14 @@
             <div class="mb-3">
                 <label class="form-label">Urgency</label>
                     <div class="input-group">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Select Urgency Level</option>
+                        <select class="form-select select-aw" id="urgency-input" aria-label="Default select example">
                             <option value="Low">Low</option>
                             <option value="Medium">Medium</option>
                             <option value="High">High</option>
                         </select>
                     </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <button type="submit" class="btn btn-primary submit-aw">Submit Request</button>
         </form>
     </div>
 </div>
