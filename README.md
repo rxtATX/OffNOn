@@ -44,6 +44,9 @@ Once you are on the browser you will be prompted to log in or sign up! After tha
 Supervised by: [Rachel](https://github.com/rxtATX)
 ## Technologies
 [Bootstrap](https://getbootstrap.com/)
+[Sequelize](https://www.npmjs.com/package/sequelize)
+[bcrypt](https://www.npmjs.com/package/bcrypt)
+[Handlebars](https://www.npmjs.com/package/handlebars)
 
 
 ## Test
