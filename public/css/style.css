@@ -244,7 +244,7 @@ body.main-layout{
 }
 
 .bottomDashboard {
-    margin-left: 8%;
+    margin-left: 6.5%;
     position: absolute;
     bottom: 9%;
 }
@@ -253,14 +253,6 @@ body.main-layout{
     margin-right:50%;
 }
 
-@media screen and (max-width: 850px) {
-    .bottomDashboard {
-        padding-top: 40%;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .topDashboard {
-        top:16%;
-    }
+.ticketStatus {
+    width: 100px;
 }

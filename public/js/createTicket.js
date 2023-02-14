@@ -1,6 +1,7 @@
 // Start of Code [Evan Towlerton]
 // Find the modal within the DOM with the class "hidden-modal-aw"
 const modal = document.querySelector(".hidden-modal-aw");
+
 // Initiliaze the handleClickEvent function
 const handleClickEvent = async (event) => {
     //Prevent the page from reloading
@@ -55,3 +56,4 @@ function toggleNewTicket() {
 // Attach an event listener to the button with id = addBtn
 // Listens for click to make the newTicket modal visible
 document.getElementById("addBtn").addEventListener("click", toggleNewTicket);
+
