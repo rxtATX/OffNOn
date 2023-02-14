@@ -13,6 +13,4 @@ ticketStatus.addEventListener("click", function(event) {
   
 });
 
-const showClaimBtn = (status) => {
-// .claim
-}
+

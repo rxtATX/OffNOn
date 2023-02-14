@@ -28,10 +28,10 @@
 
 
 
-
 {{!-- bottom half of the page --}}
 <section class="d-flex justify-content-center "> 
 
+{{#if tickets}}
 {{!-- table that includes all the ticket info --}}
     <div class="position-absolute top-50 start-50 translate-middle col-6">
     <table class="table table-bordered table-hover bg-white">
@@ -54,7 +54,7 @@
     {{#each tickets}}
 
         <tr>
-        <td>{{#if (isOpen this.status)}}<button class="claim" id="{{id}}">Claim</button>{{/if}}</td>
+        <td>{{#if (isOpen this.status)}}<button class="claim" data-id="{{id}}" id="{{id}}">Claim</button>{{/if}}</td>
         <td>{{this.status}}</td>
         <td>{{this.ticket_title}}</td>
         <td>{{this.urgency}}</td>
@@ -67,8 +67,13 @@
     </tbody>
 </table>
 </div>
+{{else}}
+<h5 id="noTickets">No tickets to display. <br> Please filter by a different criteria.</h5>
+{{/if}}
+
 
 </section>
+
 
 <script src="/js/dashboard.js"></script>
 <script src="/js/createTicket.js"></script>
