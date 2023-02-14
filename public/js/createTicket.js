@@ -11,15 +11,12 @@ const handleClickEvent = async (event) => {
     const urgency = document.querySelector("#urgency-input").value.trim();
 
     // Checks to make sure title / description / urgency 
-    if (subject && description && urgency) {
+    if (title && description && urgency) {
 
         // Make a fetch call to the API endpoint to create a new ticket
         const response = await fetch("/api/ticket", {
             method: 'POST',
-            body: JSON.stringify({
-                ticket_title: subject,
-                ticket_text: description,
-                urgency: urgency }),
+            body: JSON.stringify({ subject, description, urgency }),
             headers: { 'Content-Type': "application/json" }
         })
     // Check if the response is successful, then get the data from the response
@@ -45,7 +42,15 @@ document
 // Initialize the toggleNewTicket function on button click event
 function toggleNewTicket() {
     // Make the newTicket modal visible to user by adding a new class which makes it visible
-    modal.classList.toggle("show-modal-aw");
+    //modal.classList.toggle("d-none"); //d-none
+    if(modal.classList.contains("d-none")){
+        modal.classList.remove("d-none");
+        modal.classList.add("show-modal-aw");
+    } else{
+        modal.classList.add("d-none");
+        modal.classList.remove("show-modal-aw");
+    }
+
 }
 
 // Attach an event listener to the button with id = addBtn
