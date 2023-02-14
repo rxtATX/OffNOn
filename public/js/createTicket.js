@@ -11,12 +11,15 @@ const handleClickEvent = async (event) => {
     const urgency = document.querySelector("#urgency-input").value.trim();
 
     // Checks to make sure title / description / urgency 
-    if (title && description && urgency) {
+    if (subject && description && urgency) {
 
         // Make a fetch call to the API endpoint to create a new ticket
         const response = await fetch("/api/ticket", {
             method: 'POST',
-            body: JSON.stringify({ subject, description, urgency }),
+            body: JSON.stringify({
+                ticket_title: subject,
+                ticket_text: description,
+                urgency: urgency }),
             headers: { 'Content-Type': "application/json" }
         })
     // Check if the response is successful, then get the data from the response
