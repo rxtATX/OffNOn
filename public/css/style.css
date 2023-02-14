@@ -181,23 +181,6 @@ body.main-layout{
     font-size: 12px;
 }
 
-.chatLog {
-    border: solid 2px blue;
-}
-
-.chatColors {
-    background-color: rgb(226, 226, 226);
-    border-radius: 10px;
-}
-
-.chatColor {
-    background-color: rgb(226, 226, 226);
-}
-
-#chat {
-    background-color: rgb(226, 226, 226);
-}
-
 .ticketBottom {
     margin-top: 250px;
 }

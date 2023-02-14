@@ -32,6 +32,22 @@ module.exports = {
         
       },
 
+      format_timestamp: (date) => {
+        let p = new Intl.DateTimeFormat('en',{
+            year:'numeric',
+            month:'2-digit',
+            day:'2-digit',
+            hour:'2-digit',
+            minute:'2-digit',
+            hour12: true
+          }).formatToParts(date).reduce((acc, part) => {
+              acc[part.type] = part.value;
+              return acc;
+          }, {});
+          
+          return `${p.month}/${p.day}/${p.year}, ${p.hour}:${p.minute} ${p.dayPeriod}`; 
+        },
+
     renderUrgencyOptions: (urgency) => {
         switch (urgency) {
             case 'Medium':
@@ -111,7 +127,47 @@ module.exports = {
                 `
                 )
         }
+    },
+    
+    
+    // helper function to renderNewMessage for ticket chat
+    renderNewMessage: (msg) => {
+        const userID = req.session.user_id;
+        // Should make selecting the user more
+        if(userID === 3) {
+            return ( // This should be the styling for the technician
+                `<div class="card mt-3 mb-3">
+                <div class="card-header" style="background-color:silver">
+                    <div class="float-end" style="font-size:larger">
+                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text float-end">{{ticket_text}}</p>
+                </div>
+            </div>
+            <p>{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            )
+        } else {
+            return ( // This should be the styling for the user
+                `<div class="card mt-3 mb-3">
+                <div class="card-header" style="background-color:#007EFF">
+                    <div class="float-start" style="font-size:larger">
+                        <h5 class="card-title">Created by: {{user.first_name}} {{user.last_name}}</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ticket_text}}</p>
+                </div>
+            </div>
+            <p class="mb-3">{{{dateFormat "h, m, A" timeStamp}}}</p>`
+            )
+            
+        }
     }
+    
+    
+    
+    
 
-      
 }

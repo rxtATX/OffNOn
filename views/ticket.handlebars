@@ -4,7 +4,7 @@
 
       <div class="flex col-sm-12 col-md-6">
         <div class="card">
-          <div class="card-body bg-secondary">
+          <div class="card-body" style=" background-color:#e7e7e7;">
             <form id="ticketInfo">
 
             <h2>{{ticket.ticket_title}}</h2>
@@ -28,24 +28,57 @@
       </div>
 
     <div class="flex col-sm-12 col-md-6">
-        <div class="container py-5">
+        <div class="container">
                 <div class="row">
+
                     <div class="col-lg-7 mx-auto">
-                        <ul class="timeline">
+                      <h2 class="text-center pb-2" style="border-bottom:medium solid black;">Timeline</h2>
+                      
                             {{#each ticket.logs as |log|}}
+                          <ul class="timeline"> 
+
                               <li class="timeline-item rounded ml-3 p-4 shadow">
-                                <div data-id="{{log.id}}">{{ticket_id}}</div>
-                                  <div class="timeline-arrow"></div>
+                                <div class="timeline-arrow"></div>
+                                <div data-id="{{log.id}}"><b>Ticket Created!</b></div>
                               </li>
-                              <i class="fa fa-clock-o mr-1 ml-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{ format_date date_created}}}</span>
+
+                              <i class="fa fa-clock-o mr-1 ml-3 mb-3 mt-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{ format_date date_created}}}</span>
+
+                              <li class="timeline-item rounded ml-3 p-4 shadow">
+                                <div class="timeline-arrow"></div>
+                                <div data-id="{{log.id}}"><b>Ticket Claimed!</b></div>
+                              </li>
+
+                              <i class="fa fa-clock-o mr-1 ml-3"></i>
+                                <span data-id="{{ticket_id}}" class="small text-gray">
+                                  {{{ format_date date_created}}}
+                                </span>
+
+                              <li class="timeline-item rounded ml-3 p-4 shadow">
+                                <div class="timeline-badge primary">
+                                  <div class="timeline-arrow"></div>
+                                  <b>Comment Added!</b>
+                                </div>
+                              </li>
+
+                              <i class="fa fa-clock-o mr-1 ml-3 mb-3 mt-3"></i><span data-id="{{ticket_id}}" class="small text-gray">{{{ format_date date_created}}}</span>
+                          </ul>
                             {{/each}}
-                        </ul>
+                        {{!-- View Comments button needs to have event listener to trigger a modal that opens chat --}}
+                        <button data-toggle="modal" data-target="exampleModal" type="button" class="mt-3 btn btn-primary mx-4">
+                          <div data-id="{{log.id}}">
+                            View Comments
+                          </div>
+                        </button>
+
                     </div>
                 </div>
             </div>
     </div>
-
 </div>
+
+
+{{> ticket-chat}}
 
 <a href="/">
 <button type="click" class="text-white bg-primary font-weight-bold mx-auto mb-4 rounded" id="backBtn"><i class=" mr-2 fa-solid fa-arrow-left"></i>Back</button></a>
