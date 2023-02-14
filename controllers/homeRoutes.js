@@ -3,12 +3,15 @@ const { Log, User, Ticket } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/login', async (req, res) => {
+    if (req.session.logged_in){
+        res.redirect('/dashboard')
+    }
     res.render('login', {
         title: "Login"
     });
 })
 
-router.get('/dashboard/:status?', async (req, res) => {
+router.get('/dashboard/:status?',withAuth, async (req, res) => {
     try {
 
         let where = {};
@@ -44,10 +47,8 @@ router.get('/dashboard/:status?', async (req, res) => {
     }
 });
 
-router.get('/ticket', async (req, res) => {
-    res.render('ticket', {
-        title: "Ticket"
-    });
+router.get('/ticket',withAuth, async (req, res) => {
+    res.redirect('/dashboard');
 })
 
 router.get('/ticket/:id', withAuth, async (req,res) => {
@@ -73,7 +74,7 @@ router.get('/ticket/:id', withAuth, async (req,res) => {
 	}
 });
 
-router.get('/:status?', async (req, res) => {
+router.get('/:status?',withAuth, async (req, res) => {
     try {
         
         let where = {};

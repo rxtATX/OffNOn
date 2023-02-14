@@ -80,24 +80,24 @@ const submitNewMessage = async (event) => {
 
 // Render Chat Messages
 
-function renderNewMessage(data) {
-    const messageContainer = document.createElement('div');
+// function renderNewMessage(data) {
+   // const messageContainer = document.createElement('div');
 
-    const hiddenIcon = document.createElement('div');
+    // const hiddenIcon = document.createElement('div');
     
-    if (data.is_hidden) {
+    //if (data.is_hidden) {
 
-    }
+    // }
 
-    const messageText = document.createElement('p');
+    // const messageText = document.createElement('p');
 
-    messageText.textcontent = data.log_text;
+    // messageText.textcontent = data.log_text;
 
-    messageContainer.appendChild(messageText);
+    // messageContainer.appendChild(messageText);
 
     // Get the element to append the message container to
     // const messageList = document.querySelector('#message-list');
 
-    messageList.appendChild(messageContainer);
+    // messageList.appendChild(messageContainer);
 
-}
+// }

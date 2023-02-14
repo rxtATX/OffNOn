@@ -1,7 +1,7 @@
 // Start of Code [Evan Towlerton]
 
-// Find the modal within the DOM with the class "custom-modal-aw0"
-const modal = document.querySelector(".custom-modal-aw");
+// Find the modal within the DOM with the class "hidden-modal-aw"
+const modal = document.querySelector(".hidden-modal-aw");
 
 // Initiliaze the handleClickEvent function
 const handleClickEvent = async (event) => {
@@ -13,13 +13,16 @@ const handleClickEvent = async (event) => {
     const description = document.querySelector("#description-input").value.trim();
     const urgency = document.querySelector("#urgency-input").value.trim();
 
-    // Checks to make sure title / description / urgency exist
-    if (title && description && urgency) {
+    // Checks to make sure subject / description / urgency exist in the user input field
+    if (subject && description && urgency) {
 
         // Make a fetch call to the API endpoint to create a new ticket
         const response = await fetch("/api/ticket", {
             method: 'POST',
-            body: JSON.stringify({ subject, description, urgency }),
+            body: JSON.stringify({
+                ticket_title: subject,
+                ticket_text: description,
+                urgency: urgency }),
             headers: { 'Content-Type': "application/json" }
         })
     // Check if the response is successful, then get the data from the response
@@ -42,13 +45,15 @@ document
     .querySelector("#create")
     .addEventListener("click", handleClickEvent);
 
-////////////////////////////////////////////////////////////////////////////////////////
-
 // Initialize the toggleNewTicket function on button click event
 function toggleNewTicket() {
     // Make the newTicket modal visible to user by adding a new class which makes it visible
     modal.classList.toggle("show-modal-aw");
 }
+
+// Attach an event listener to the button with id = addBtn
+// Listens for click to make the newTicket modal visible
+document.getElementById("addBtn").addEventListener("click", toggleNewTicket);
 
 // Attach an event listener to the button with id = addBtn
 // Listens for click to make the newTicket modal visible
