@@ -187,7 +187,7 @@ body.main-layout{
 /*dashboard top half styling*/
 #dbHead {
     font-size: 50px;
-}
+}    
 
 #subhead{
     font-size: 25px;
@@ -238,4 +238,8 @@ body.main-layout{
 
 .ticketStatus {
     width: 100px;
+}
+
+#noTickets {
+    text-align: center;
 }
