@@ -20,7 +20,7 @@ router.put('/:id', async (req, res) => {
 try {
     const logData = await Log.update (req.body, {
         where: {  
-            ticket_id: req.params.ticket_id,
+            ticket_id: req.params.id,
     }
     });
 
