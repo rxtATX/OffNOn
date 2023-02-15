@@ -70,5 +70,5 @@ top: 25px;
 
 
 .fixed-top {
-    z-index: 3;
+    z-index: 3 !important;
 }
