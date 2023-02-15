@@ -34,6 +34,7 @@ document
 
 //initialize the function for the button/chat element click event
 function chatlogModal () {
+    //modal contains class of "hidden-modal-aw" to keep modal hidden on page until event listener is clicked
     if (modal.classList.contains ("hidden-modal-aw")) {
         modal.classList.remove ("hidden-modal-aw");
         modal.classList.add("show-modal-aw");
@@ -45,6 +46,6 @@ function chatlogModal () {
     }
 
 
-//
+//chatlogModal function should fire once "viewComment" button is clicked
 document.getElementById ("viewComment").addEventListener ("click", chatlogModal);
 
