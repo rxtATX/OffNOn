@@ -24,6 +24,9 @@ const handleClaimEvent = async (event) => {
 
   const response = await fetch(`/api/ticket/${ID}`, {
     method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({
       status: 'Claimed'
     })
