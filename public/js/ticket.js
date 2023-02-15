@@ -20,7 +20,7 @@ const submitEventHandler = async (event) => {
         
         if (response.ok) {
             const data = await response.json()
-            document.location.replace(`/ticket/${data.id}`)
+            document.location.reload();
         } else {
             alert('Ticket not Submitted. Please, try again.');
         }
